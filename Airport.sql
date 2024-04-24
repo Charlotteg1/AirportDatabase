@@ -66,3 +66,19 @@ RENAME COLUMN flight_number to flight_id;
 
 SELECT * FROM crew_roster;
 
+ALTER TABLE flight
+MODIFY COLUMN flight_id VARCHAR(100);
+
+ALTER TABLE crew_roster
+MODIFY COLUMN flight_id VARCHAR(100);
+
+ALTER TABLE passenger_journey
+MODIFY COLUMN flight_id VARCHAR(100);
+
+ALTER TABLE flight
+RENAME COLUMN duration to duration_minutes;
+
+
+
+
+
