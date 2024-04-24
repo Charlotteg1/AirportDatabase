@@ -28,9 +28,41 @@ flight_number INT NOT NULL
 
 SELECT * FROM crew_roster;
 
+-- Olivia 
+CREATE TABLE plane (
+plane_id INTEGER PRIMARY KEY NOT NULL,
+airline VARCHAR(50) NOT NULL,
+model VARCHAR(50) NOT NULL,
+capacity INTEGER NOT NULL
+);
 
+CREATE TABLE passengers(
+passenger_id INTEGER PRIMARY KEY NOT NULL,
+forename VARCHAR(50) NOT NULL,
+surname VARCHAR(50) NOT NULL,
+passport_id VARCHAR(50) NOT NULL,
+date_of_birth DATE NOT NULL,
+allergies VARCHAR(50),
+assistance_required BOOLEAN NOT NULL
+);
 
+CREATE TABLE passenger_journey(
+passenger_journey_id INTEGER PRIMARY KEY NOT NULL,
+passenger_id INTEGER NOT NULL,
+flight_id INTEGER NOT NULL,
+seat_number VARCHAR(50) NOT NULL,
+cabin_bag BOOLEAN NOT NULL,
+checked_bag BOOLEAN NOT NULL
+);
+-- 
 
- 
+ALTER TABLE flight
+RENAME COLUMN flight_number to flight_id;
 
+SELECT * FROM flight;
+
+ALTER TABLE crew_roster
+RENAME COLUMN flight_number to flight_id;
+
+SELECT * FROM crew_roster;
 
