@@ -10,6 +10,25 @@ duration INT NOT NULL);
 
 SELECT * FROM flight;
 
+CREATE TABLE crew (
+crew_id  INT NOT NULL PRIMARY KEY,
+passport_number INT NOT NULL,
+forename VARCHAR(100) NOT NULL,
+surname VARCHAR(100) NOT NULL, 
+job_role VARCHAR(100) NOT NULL
+);
+
+SELECT * FROM crew;
+
+CREATE TABLE crew_roster (
+shift_id INT NOT NULL PRIMARY KEY,
+crew_id  INT NOT NULL,
+flight_number INT NOT NULL
+);
+
+SELECT * FROM crew_roster;
+
+
 
 
  
