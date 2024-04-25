@@ -78,7 +78,30 @@ MODIFY COLUMN flight_id VARCHAR(100);
 ALTER TABLE flight
 RENAME COLUMN duration to duration_minutes;
 
+ALTER TABLE crew
+MODIFY COLUMN passport_number VARCHAR(100);
+
+ALTER TABLE crew
+RENAME COLUMN passport_number to passport_id;
+
+ALTER TABLE flight
+ADD FOREIGN KEY (plane_id) REFERENCES plane(plane_id);
+
+DESCRIBE flight;
+
+ALTER TABLE passenger_journey
+ADD FOREIGN KEY (passenger_id) REFERENCES passengers (passenger_id);
+
+ALTER TABLE passenger_journey
+ADD FOREIGN KEY (flight_id) REFERENCES flight (flight_id);
+
+-- Olivia
+ALTER TABLE crew_roster
+ADD FOREIGN KEY (flight_id)
+REFERENCES flight (flight_id);
 
 
-
-
+ALTER TABLE crew_roster
+ADD FOREIGN KEY (crew_id)
+REFERENCES crew (crew_id);
+-- 
